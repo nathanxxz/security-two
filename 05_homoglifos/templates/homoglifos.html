@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="utf-8"><title>Dominios sosia (homoglifos)</title></head>
+<body style="font-family:sans-serif;max-width:720px;margin:30px auto">
+  <h1>Dominios sosia: ataque homografico (homoglifos)</h1>
+  <p>Cada par tem um dominio legitimo e um impostor que parece igual. Tente
+     apontar o falso e so entao abra a explicacao.</p>
+  {% for p in pares %}
+    <div style="border:1px solid #ccc;padding:12px;margin-bottom:12px">
+      <p>A: <code>{{ p.legitimo }}</code></p>
+      <p>B: <code>{{ p.impostor }}</code></p>
+      <details>
+        <summary>Qual e o falso e por que?</summary>
+        <p>O impostor e o <strong>B</strong>: <code>{{ p.impostor }}</code>.</p>
+        <p>{{ p.truque }}</p>
+        {% if p.suspeitos %}
+          <p>Caracteres suspeitos: {{ p.suspeitos | join(", ") }}</p>
+        {% endif %}
+        <p>Forma Punycode (como o navegador realmente processa):
+           <code>{{ p.punycode }}</code></p>
+      </details>
+    </div>
+  {% endfor %}
+  <p>Licao: confie no que o navegador mostra na barra de endereco - muitos
+     exibem a forma <code>xn--</code> para dominios com caracteres de outros
+     alfabetos - e nao na aparencia das letras.</p>
+</body>
+</html>

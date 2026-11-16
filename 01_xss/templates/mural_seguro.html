@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="utf-8"><title>Mural de Recados</title></head>
+<body>
+  <h1>Mural de Recados</h1>
+  <form method="post" action="/recado">
+    <input name="texto" placeholder="Escreva um recado">
+    <button type="submit">Publicar</button>
+  </form>
+  <hr>
+  {% for r in recados %}
+    <div class="recado">{{ r }}</div>
+  {% endfor %}
+</body>
+</html>

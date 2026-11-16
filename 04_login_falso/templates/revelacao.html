@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="utf-8"><title>Isto era phishing</title></head>
+<body style="font-family:sans-serif;max-width:600px;margin:40px auto">
+  <h1>Isto era uma pagina de phishing</h1>
+  <p>Nada do que voce digitou foi lido, guardado ou enviado. Mas num ataque
+     real, sua senha acabaria de ser roubada. Veja os sinais que denunciavam
+     a fraude:</p>
+  <ul>
+    {% for sinal in sinais %}
+      <li>{{ sinal }}</li>
+    {% endfor %}
+  </ul>
+  <p><a href="/">Voltar e olhar a pagina com outros olhos</a></p>
+</body>
+</html>

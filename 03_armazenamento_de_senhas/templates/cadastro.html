@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="utf-8"><title>Cadastro</title></head>
+<body>
+  <h1>Criar conta</h1>
+  {% if erro %}<p style="color:red">{{ erro }}</p>{% endif %}
+  <form method="post" action="/cadastrar">
+    <label>Usuario: <input name="usuario"></label><br>
+    <label>Senha: <input name="senha" type="password"></label><br>
+    <button type="submit">Cadastrar</button>
+  </form>
+  <p><a href="/admin">Ver banco de usuarios (admin)</a></p>
+</body>
+</html>

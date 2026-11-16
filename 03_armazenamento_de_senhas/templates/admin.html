@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="utf-8"><title>Admin - Banco de usuarios</title></head>
+<body>
+  <h1>Banco de usuarios</h1>
+  <table border="1" cellpadding="4">
+    <tr><th>Usuario</th><th>Senha armazenada</th></tr>
+    {% for usuario, senha in usuarios %}
+      <tr><td>{{ usuario }}</td><td>{{ senha }}</td></tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
